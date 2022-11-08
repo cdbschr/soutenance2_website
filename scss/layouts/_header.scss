@@ -1,61 +1,42 @@
 @use '../utils/mixins' as m;
 
 header {
-  background-color: var(--background-header);
+  background: url("/public/img/utils/fond-top.png") no-repeat;
+  background-position: top;
+  background-size: 100%;
 }
 
 header .container {
   width: 100%;
   display: flex;
   padding: 15px 10px;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   
   @include m.mq('tablet-up') {
     padding: 15px 3px;
     justify-content: space-between;
-  }
+  }  
 }
 
-#logo__mobiletablet {
-  display: block;
+#header-phone {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 10px;
 
-  & img {
-    width: 5em;
-    height: auto;
-  }
-  
   @include m.mq('tablet-up') {
     display: none;
   }
+
+  & #logo {
+    margin-top: 0.9rem;
+  }
+
+  @import '../components/burgermenu';
 }
 
-#logo__desktop {
-  display: none;
-
-  @include m.mq('tablet-up') {
-    display: block;
-    width: 15em;
-    height: auto;
-  }
-}
-
-nav {
-  display: none;
-
-  @media (min-width: 884px) {
-    display: block;
-    width: 70%;
-  }
-}
-
-nav ul {
-  display: flex;
-  justify-content: end;
-
-  & li {
-    margin-left: 1em;
-    text-transform: uppercase;
-    font-weight: 600;
-  }
+#logo {
+  width: 150px;
+  height: auto;
 }

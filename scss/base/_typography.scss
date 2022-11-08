@@ -6,17 +6,16 @@ body {
 
 h1 {
   font-family: $fontTitle;
-  font-size: $font-size-xxl;
-  text-align: center;
-  text-transform: uppercase;
+  font-size: $font-size-lg;
+  text-transform: capitalize;
 }
 
 h2 {
   font-family: $fontTitle;
-  font-size: $font-size-xl;
+  font-size: $font-size-lg;
   font-weight: 700;
   text-align: center;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 h3 {

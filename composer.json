@@ -2,7 +2,7 @@
     "name": "alsacecorenov/website",
     "autoload": {
         "psr-4": {
-            "BestMusic\\": "/app"
+            "BestMusic\\": "./app"
         }
     },
     "authors": [

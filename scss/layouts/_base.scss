@@ -8,14 +8,6 @@
   & h1, h2 {
     width: 100%;
   }
-
-  & article, article h3 {
-    width: 100%;
-  }
-}
-
-body {
-  background-color: var(--background);
 }
 
 main {
@@ -42,3 +34,10 @@ h2 {
 
 /* Buttons */
 @import '../components/buttons';
+article ~ .button {
+  @include m.flex-container-center;
+  margin: 0 auto;
+}
+
+/* article albums */
+@import '../components/article';

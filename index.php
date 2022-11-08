@@ -5,15 +5,15 @@ $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 try {
-  $frontController = new \BestMusic\controllers\FrontController();
+  $frontController = new BestMusic\Controllers\FrontController();
 
   if (isset($_GET['action'])) {
-    // if ($_GET['action'] == "rgpd") {
-    //   $frontController->rgpd();
+    if ($_GET['action'] == "rgpd") {
+      $frontController->rgpd();
     
-    // } elseif ($_GET['action'] == "mentionslegales") {
-    //   $frontController->mentionslegales();
-    // }
+    } elseif ($_GET['action'] == "mentionslegales") {
+      $frontController->mentionslegales();
+    }
 
   } else {
     $frontController->home();
