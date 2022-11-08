@@ -1,0 +1,17 @@
+{
+    "name": "alsacecorenov/website",
+    "autoload": {
+        "psr-4": {
+            "BestMusic\\": "/app"
+        }
+    },
+    "authors": [
+        {
+            "name": "cdbschr",
+            "email": "82452501+cdbschr@users.noreply.github.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.4"
+    }
+}

@@ -1,0 +1,11 @@
+#dependancies
+/vendor
+/node_modules
+
+#config
+.env
+
+#dev-config
+bs-config.js
+
+.DS_Store
