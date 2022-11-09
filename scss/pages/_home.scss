@@ -1,8 +1,52 @@
 @use '../utils/mixins' as m;
 
-h1 {
-  display: none;
-  @include m.mq('tablet-down') {
-    display: initial;
+.album {
+  width: 315px;
+  height: auto;
+
+  @include m.mq('desktop-up') {
+    width: 240px;
+    height: auto;
+  }
+}
+
+#artistes {
+  @include m.flex-container-center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 2rem 0;
+  
+  & h2 {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  & p {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.artiste {
+  @include m.flex-container-center;
+  flex-direction: column;
+  margin: 0 1rem;
+  padding: 1rem;
+
+  & img {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+  }
+
+  & .titreartiste {
+    font-weight: bold;
+  }
+
+  & .nbalbum {
+    font-size: 0.8rem;
+    color: rgb(68, 68, 68);
   }
 }

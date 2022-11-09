@@ -1,5 +1,12 @@
 @use '../utils/mixins' as m;
 
+h1 {
+  display: none;
+  @include m.mq('tablet-down') {
+    display: initial;
+  }
+}
+
 header {
   background: url("/public/img/utils/fond-top.png") no-repeat;
   background-position: top;
@@ -7,15 +14,35 @@ header {
 }
 
 header .container {
-  width: 100%;
-  display: flex;
-  padding: 15px 10px;
-  justify-content: space-between;
-  align-items: center;
-  
+  display: none;
+
   @include m.mq('tablet-up') {
+    width: 100%;
+    display: flex;
+    padding: 15px 10px;
+    justify-content: space-between;
+    align-items: center;
     padding: 15px 3px;
     justify-content: space-between;
+
+    & div:nth-child(1) {
+      width: 100%;
+      @include m.flex-container;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    & ul {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      color: var(--color-light);
+      font-size: 1.5rem;
+
+      & li {
+        margin: 0 10px;
+      }
+    }
   }  
 }
 
@@ -36,7 +63,16 @@ header .container {
   @import '../components/burgermenu';
 }
 
+#logo-header img {
+  width: 40px;
+  height: auto;  
+}
+
 #logo {
   width: 150px;
   height: auto;
+
+  @include m.mq('tablet-up') {
+    width: 200px;
+  }
 }
