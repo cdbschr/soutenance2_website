@@ -8,13 +8,19 @@ try {
   $frontController = new BestMusic\Controllers\FrontController();
 
   if (isset($_GET['action'])) {
-    if ($_GET['action'] == "rgpd") {
+    if ($_GET['action'] == "categoriesPage") {
+      $frontController->categoriesPage();
+
+    } else if ($_GET['action'] == "articlePage") {
+      $frontController->articlePage();
+
+    } else if ($_GET['action'] == "rgpd") {
       $frontController->rgpd();
     
     } elseif ($_GET['action'] == "mentionslegales") {
       $frontController->mentionslegales();
+      
     }
-
   } else {
     $frontController->home();
   }

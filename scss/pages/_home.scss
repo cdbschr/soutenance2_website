@@ -50,3 +50,18 @@
     color: rgb(68, 68, 68);
   }
 }
+
+.splide__track:not(:last-child) {
+  @include m.mq('desktop-up') {
+    display: none;
+  }
+}
+
+.desktop {
+  display: none;
+
+  @include m.mq('desktop-up') {
+    display: inherit;
+    @include m.flex-container-center;
+  }
+}

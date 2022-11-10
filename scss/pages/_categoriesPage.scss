@@ -1,0 +1,88 @@
+@use '../utils/mixins' as m;
+
+.ariane {
+  margin-left: 3vw;
+
+  & span {
+    color: #600e2b;
+  }
+}
+
+.selection {
+  @include m.flex-container-center;
+  margin: 2rem;
+
+  .selectionbox {
+    border: 1px solid var(--color-dark);
+    
+    @include m.mq('tablet-up') {
+      width: 92%;
+    }
+
+    @include m.mq('desktop-up') {
+      width: initial;
+    }
+  }
+
+  & .selectionbox-title {
+    padding: 30px 60px;
+    color: white;
+    font-size: 1.5rem;
+    background-color: #acaaaa;
+  }
+
+  & .selectionbox-content {
+    margin-left: 1vw;
+    padding: 2vh 3vw;
+
+    & .select {
+      color: #600e2b;
+    }
+  }
+}
+
+.categories {
+  display: none;
+  margin-left: 2vw;
+
+  @include m.mq('desktop-up') {
+    @include m.flex-container;
+
+    & h2 {
+      width: 100%;
+      text-align: left;
+    }
+  }
+}
+
+#incontournables-categorie div {
+  @include m.flex-container-center;
+
+  & .icons {
+    justify-content: space-between;
+  }
+}
+
+#incontournables-categorie .desktop {
+  display: none;
+
+  @include m.mq('desktop-up') {
+    @include m.flex-container-center;
+  }
+}
+
+.pagination {
+  @include m.flex-container-center;
+
+  & .buttoncategorie {
+    margin: 0 1rem;
+    padding: 5px 10px;
+    border: 1px solid var(--color-dark);
+  }
+
+  & .active {
+    color: white;
+    background-color: #D59299;
+    border-color: #D59299;
+  }
+}

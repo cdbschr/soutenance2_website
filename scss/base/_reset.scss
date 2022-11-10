@@ -21,6 +21,10 @@ a {
   transition: color 0.3s;
 }
 
+button, input[type="submit"] {
+  cursor: pointer;
+}
+
 textarea {
   font-size: inherit;
   font-family: inherit;

@@ -52,6 +52,10 @@ a {
   transition: color 0.3s;
 }
 
+button, input[type=submit] {
+  cursor: pointer;
+}
+
 textarea {
   font-size: inherit;
   font-family: inherit;
@@ -91,18 +95,38 @@ p, a, li, button, label, input, textarea {
 
 /* Header */
 h1 {
+  color: var(--color-light);
   display: none;
 }
-@media (min-width: 576px) {
+@media (min-width: 947px) {
   h1 {
     display: initial;
+    position: absolute;
+    top: 10px;
+    left: 0;
   }
 }
 
 header {
   background: url("/public/img/utils/fond-top.png") no-repeat;
-  background-position: top;
-  background-size: 100%;
+  background-position: bottom;
+  background-size: cover;
+  height: 30vh;
+}
+@media (min-width: 576px) {
+  header {
+    position: relative;
+    height: 500px;
+  }
+}
+header #header-loupe-h2 h2 {
+  width: 50%;
+  color: var(--color-light);
+}
+@media (min-width: 947px) {
+  header #header-loupe-h2 h2 {
+    display: none;
+  }
 }
 
 header .container {
@@ -112,19 +136,32 @@ header .container {
   header .container {
     width: 100%;
     display: flex;
-    padding: 15px 10px;
-    justify-content: space-between;
     align-items: center;
     padding: 15px 3px;
-    justify-content: space-between;
   }
-  header .container div:nth-child(1) {
+  header .container #spacebetween-header {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
   }
+  header .container #header-loupe-h2 {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  header .container #header-loupe-h2 h2 {
+    margin: 0;
+  }
+}
+@media (min-width: 768px) and (min-width: 947px) {
+  header .container #header-loupe-h2 a {
+    margin-left: 8rem;
+  }
+}
+@media (min-width: 768px) {
   header .container ul {
     width: 100%;
     display: flex;
@@ -237,16 +274,25 @@ header .container {
   color: var(--color-primary);
 }
 
+@media (min-width: 768px) {
+  #logo-header {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
 #logo-header img {
   width: 40px;
   height: auto;
+  margin: 0 10px;
 }
 
 #logo {
   width: 150px;
   height: auto;
 }
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   #logo {
     width: 200px;
   }
@@ -284,27 +330,33 @@ h2:not(footer h2) {
   margin: 2rem 0 0.3rem;
 }
 
+.category {
+  color: #777676;
+}
+
 /* Buttons */
-.button, .button__form, .button__header {
+a .button {
   padding: 15px 20px;
   color: var(--color-light);
   background-color: #B2ADAA;
   border-radius: 8px;
   border: none;
 }
-.button:hover, .button__form:hover, .button__header:hover {
+a .button:hover {
   background-color: #D0C8C0;
 }
-
-.button__form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  width: 40%;
+@media (min-width: 768px) {
+  a .button {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 947px) {
+  a .button {
+    font-size: 1.5rem;
+  }
 }
 
-article ~ .button, article ~ .button__header, article ~ .button__form {
+article ~ .button {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -354,6 +406,10 @@ article ~ .button, article ~ .button__header, article ~ .button__form {
 
 .albumcontent h4 {
   margin-top: 5px;
+}
+
+.splide__arrow {
+  display: none;
 }
 
 /* Footer */
@@ -576,6 +632,200 @@ footer aside .socials a {
 .artiste .nbalbum {
   font-size: 0.8rem;
   color: rgb(68, 68, 68);
+}
+
+@media (min-width: 947px) {
+  .splide__track:not(:last-child) {
+    display: none;
+  }
+}
+
+.desktop {
+  display: none;
+}
+@media (min-width: 947px) {
+  .desktop {
+    display: inherit;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* Page Categories */
+.ariane {
+  margin-left: 3vw;
+}
+.ariane span {
+  color: #600e2b;
+}
+
+.selection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+}
+.selection .selectionbox {
+  border: 1px solid var(--color-dark);
+}
+@media (min-width: 768px) {
+  .selection .selectionbox {
+    width: 92%;
+  }
+}
+@media (min-width: 947px) {
+  .selection .selectionbox {
+    width: initial;
+  }
+}
+.selection .selectionbox-title {
+  padding: 30px 60px;
+  color: white;
+  font-size: 1.5rem;
+  background-color: #acaaaa;
+}
+.selection .selectionbox-content {
+  margin-left: 1vw;
+  padding: 2vh 3vw;
+}
+.selection .selectionbox-content .select {
+  color: #600e2b;
+}
+
+.categories {
+  display: none;
+  margin-left: 2vw;
+}
+@media (min-width: 947px) {
+  .categories {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .categories h2 {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+#incontournables-categorie div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+#incontournables-categorie div .icons {
+  justify-content: space-between;
+}
+
+#incontournables-categorie .desktop {
+  display: none;
+}
+@media (min-width: 947px) {
+  #incontournables-categorie .desktop {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.pagination .buttoncategorie {
+  margin: 0 1rem;
+  padding: 5px 10px;
+  border: 1px solid var(--color-dark);
+}
+.pagination .active {
+  color: white;
+  background-color: #D59299;
+  border-color: #D59299;
+}
+
+/* Page Articles */
+.ariane {
+  width: 100%;
+  margin-bottom: 3vh;
+}
+.ariane p {
+  text-align: left;
+}
+
+#articlePage .mobile {
+  width: 100%;
+  margin: 1vh 0;
+  font-size: 2rem;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  #articlePage .mobile {
+    display: none;
+  }
+}
+#articlePage .album-image {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+@media (min-width: 576px) {
+  #articlePage .album-image {
+    width: 50%;
+  }
+  #articlePage .album-image .desktop {
+    display: initial;
+  }
+}
+#articlePage .albumcontent {
+  padding: 1rem;
+}
+@media (min-width: 768px) {
+  #articlePage .albumcontent .desktop {
+    display: block;
+    font-size: 2rem;
+  }
+}
+#articlePage .albumcontent h4, #articlePage .albumcontent h5, #articlePage .albumcontent p {
+  margin-top: 1vh;
+  text-align: left;
+}
+#articlePage .albumcontent h5 {
+  font-size: 1.4rem;
+}
+@media (min-width: 768px) {
+  #articlePage .albumcontent {
+    width: 50%;
+  }
+}
+@media (min-width: 947px) {
+  #articlePage .albumcontent p:last-of-type {
+    font-size: 1.3rem;
+  }
+}
+
+#articlePage.container {
+  align-items: start;
+}
+#articlePage.container .price {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+@media (min-width: 947px) {
+  #articlePage.container .price {
+    font-size: 1.5rem;
+  }
+}
+#articlePage.container .button {
+  margin-top: 1vh;
+  background-color: #D59299;
+  color: white;
 }
 
 /* Pages Errors */

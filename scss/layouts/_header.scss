@@ -1,16 +1,35 @@
 @use '../utils/mixins' as m;
 
 h1 {
+  color: var(--color-light);
   display: none;
-  @include m.mq('tablet-down') {
+
+  @include m.mq('desktop-up') {
     display: initial;
+    position: absolute;
+    top: 10px;
+    left: 0;
   }
 }
 
 header {
   background: url("/public/img/utils/fond-top.png") no-repeat;
-  background-position: top;
-  background-size: 100%;
+  background-position: bottom;
+  background-size: cover;
+  height: 30vh;
+
+  @include m.mq('tablet-down') {
+    position: relative;
+    height: 500px;
+  }
+
+  & #header-loupe-h2 h2 {
+    width: 50%;
+    color: var(--color-light);
+    @include m.mq('desktop-up') {
+      display: none;
+    }
+  }
 }
 
 header .container {
@@ -19,17 +38,30 @@ header .container {
   @include m.mq('tablet-up') {
     width: 100%;
     display: flex;
-    padding: 15px 10px;
-    justify-content: space-between;
     align-items: center;
     padding: 15px 3px;
-    justify-content: space-between;
 
-    & div:nth-child(1) {
+    & #spacebetween-header {
       width: 100%;
       @include m.flex-container;
       justify-content: space-between;
       align-items: center;
+    }
+
+    & #header-loupe-h2 {
+      width: 50%;
+      @include m.flex-container;
+      align-items: center;
+
+      & h2 {
+        margin: 0;
+      }
+
+      & a {
+        @include m.mq('desktop-up') {
+          margin-left: 8rem;
+        }
+      }
     }
 
     & ul {
@@ -63,16 +95,26 @@ header .container {
   @import '../components/burgermenu';
 }
 
-#logo-header img {
-  width: 40px;
-  height: auto;  
+#logo-header {
+  @include m.mq('tablet-up') {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  & img {
+    width: 40px;
+    height: auto;
+    margin: 0 10px; 
+  }
 }
 
 #logo {
   width: 150px;
   height: auto;
 
-  @include m.mq('tablet-up') {
+  @include m.mq('tablet-down') {
     width: 200px;
   }
 }

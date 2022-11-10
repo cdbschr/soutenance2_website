@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="<?= $description ?>">
   <title>BestMusic - <?= $title ?></title>
+  <link rel="stylesheet" href="/public/styles/splide.min.css">
   <link rel="stylesheet" href="/public/styles/style.css">
   <link rel="icon" type="image/png" href="public/img/utils/logo.png" />
 </head>
@@ -18,8 +19,11 @@
     <?php require_once 'app/Views/frontend/layouts/nav.php'; ?>
 
     <div class="container">
-      <div>
-        <a href="#"><img src="/public/img/svg/loupe.svg" alt="loupe" id="search-header"></a>
+      <div id="spacebetween-header">
+        <div id="header-loupe-h2">
+          <h2>Best Music</h2>
+          <a href="#"><img src="/public/img/svg/loupe.svg" alt="loupe" id="search-header"></a>
+        </div>
         <div id="logo-header">
           <a href="#"><img src="/public/img/svg/vector.svg" alt="heart" id="heart"></a>
           <a href="#"><img src="/public/img/svg/mail.svg" alt="mail" id="mail"></a>

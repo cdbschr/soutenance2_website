@@ -32,6 +32,10 @@ h2:not(footer h2) {
   margin: 2rem 0 0.3rem;
 }
 
+.category {
+  color: #777676;
+}
+
 /* Buttons */
 @import '../components/buttons';
 article ~ .button {

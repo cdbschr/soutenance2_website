@@ -28,6 +28,8 @@
     </div>
   </section>
 </footer>
+<script src="/public/scripts/splide.min.js"></script>
+<script src="/public/scripts/slide.js"></script>
 </body>
 
 </html>

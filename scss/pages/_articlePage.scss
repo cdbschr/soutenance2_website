@@ -1,0 +1,91 @@
+@use '../utils/mixins' as m;
+
+.ariane {
+  width: 100%;
+  margin-bottom: 3vh;
+
+  & p {
+    text-align: left;
+  }
+}
+
+
+#articlePage {
+  & .mobile {
+    width: 100%;
+    margin: 1vh 0;
+    font-size: 2rem;
+    text-align: center;
+
+    @include m.mq('tablet-up') {
+      display: none;
+    }
+  }
+
+  & .album-image {
+    @include m.flex-container-center;
+
+    @include m.mq('tablet-down') {
+      width: 50%;
+
+      & .desktop {
+        display: initial;
+      }
+    }
+  }
+
+  & .albumcontent {
+    padding: 1rem;
+
+    & .desktop {
+      @include m.mq('tablet-up') {
+        display: block;
+        font-size: 2rem;
+      }
+    }
+
+    
+
+    & h4, h5, p {
+      margin-top: 1vh;
+      text-align: left;
+    }
+
+    & h5 {
+      font-size: 1.4rem;
+    }
+
+    @include m.mq('tablet-up') {
+      width: 50%;
+      
+      
+    }
+    @include m.mq('desktop-up') {
+
+
+      & p:last-of-type {
+        font-size: 1.3rem;
+      }
+    }
+    
+  }
+}
+
+#articlePage.container {
+  align-items: start;
+
+  & .price {
+    font-weight: bold;
+    font-size: 1.2rem;
+
+    @include m.mq('desktop-up') {
+      font-size: 1.5rem;
+    }
+  }
+
+  & .button {
+    margin-top: 1vh;
+    background-color: #D59299;
+    color: white;
+  }
+}

@@ -1,6 +1,6 @@
 @use '../utils/mixins' as m;
 
-.button {
+a .button {
   padding: 15px 20px;
   color: var(--color-light);
   background-color: #B2ADAA;
@@ -10,14 +10,14 @@
   &:hover {
     background-color: #D0C8C0;
   }
-}
 
-.button__header {
-  @extend .button;
-}
+  @include m.mq('tablet-up') {
+    // width: 30%;
+    font-size: 1.5rem;
+  }
 
-.button__form {
-  @include m.flex-container-center;
-  @extend .button;
-  width: 40%;
+  @include m.mq('desktop-up') {
+    // width: 20%;
+    font-size: 1.5rem;
+  }
 }
